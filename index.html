@@ -29,7 +29,7 @@ nav a:hover{color:var(--primary);}
 .btn{background:var(--primary); color:#fff; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
 .ghost{background:transparent; border:2px solid var(--primary); color:var(--primary); padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
 
-/* 🔥 Ticker Styles */
+/* Ticker */
 .trending { background:#fff; border-radius:8px; padding:8px 12px; margin:12px 0; display:flex; align-items:center; gap:12px; overflow:hidden; box-shadow:var(--shadow);}
 .trending .tag{font-weight:700; color: red; font-size:13px;}
 .ticker{display:flex; gap:30px; white-space:nowrap; overflow:hidden; animation:scroll 20s linear infinite;}
@@ -66,17 +66,6 @@ footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#ff
 .newsletter button{background:var(--accent); border:none; color:#fff; padding:12px 14px; border-radius:8px; font-weight:600; cursor:pointer;}
 .newsletter button:hover{background:#f9a825;}
 .footer-bottom{text-align:center; margin-top:30px; font-size:13px; opacity:.85; border-top:1px solid rgba(255,255,255,0.2); padding-top:10px;}
-.modal{position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center; z-index:999;}
-.modal.show{display:flex;}
-.modal-content{background:#fff; max-width:600px; width:90%; border-radius:12px; box-shadow:var(--shadow); padding:20px; max-height:80vh; overflow-y:auto; animation:fadeIn .3s ease;}
-@keyframes fadeIn{from{opacity:0; transform:scale(.9);}to{opacity:1; transform:scale(1);}}
-.modal-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
-.modal-header h3{font-family:'Merriweather',serif;}
-.modal-header button{background:none; border:none; font-size:20px; cursor:pointer;}
-.comment{background:#f9f9f9; padding:10px; border-radius:8px; margin-bottom:8px;}
-.comment strong{color:var(--primary);}
-.comment-form input,.comment-form textarea{width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:8px;}
-.comment-form button{background:var(--primary); color:#fff; padding:10px 14px; border:none; border-radius:8px; font-weight:600; cursor:pointer;}
 
 /* Hero carousel */
 .carousel{position:relative; overflow:hidden; border-radius:12px; margin-bottom:20px;}
@@ -93,54 +82,45 @@ footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#ff
 
 <body>
 <main>
-  <div class="wrap">
-    <header>
-      <div class="brand"><div class="logo">Unique Voice</div><div class="tag">Culture • Business • Inspiration</div></div>
-      <div class="hamburger" id="menuToggle">☰</div>
-      <nav id="mainNav"><a href="#">Home</a><a href="#">Local</a><a href="#">Business</a><a href="#">Politics</a></nav>
-      <div class="actions"><a class="ghost" href="#subscribe">Subscribe</a><a class="btn" href="#">Donate</a></div>
-    </header>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">Unique Voice</div><div class="tag">Culture • Business • Inspiration</div></div>
+  <div class="hamburger" id="menuToggle">☰</div>
+  <nav id="mainNav"><a href="#">Home</a><a href="#">Local</a><a href="#">Business</a><a href="#">Politics</a></nav>
+  <div class="actions"><a class="ghost" href="#subscribe">Subscribe</a><a class="btn" href="#">Donate</a></div>
+</header>
+<!-- Trending Ticker -->
+<div class="trending">
+  <div class="tag"><i class="fa-solid fa-bolt"></i> Trending</div>
+  <div class="ticker" id="ticker"></div>
+</div>
+</div>
 
-    <!-- 🔥 Trending Ticker -->
-    <div class="trending">
-      <div class="tag"><i class="fa-solid fa-bolt"></i> Trending</div>
-      <div class="ticker" id="ticker"></div>
+<!-- Hero Carousel -->
+<section class="hero">
+  <div class="carousel card">
+    <div class="slides" id="slides"></div>
+    <div class="carousel-controls">
+      <button class="ctrl" id="prev">‹</button>
+     <button class="ctrl" id="next">›</button>
     </div>
   </div>
+</section>
 
-  <!-- 🔥 Hero Carousel -->
-  <section class="hero">
-    <div class="carousel card">
-      <div class="slides" id="slides"></div>
-      <div class="carousel-controls">
-        <button class="ctrl" id="prev">‹</button>
-        <button class="ctrl" id="next">›</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <div class="section-title">Top Stories</div>
-      <div class="section-sub">Editor’s choice for you</div>
-    </div<div class="grid" id="postGrid"></div>
-  </section>
+<section class="section">
+  <div class="section-header">
+    <div class="section-title">Top Stories</div>
+    <div class="section-sub">Editor’s choice for you</div>
+  </div>
+  <div class="grid" id="postGrid"></div>
+</section>
 </main>
 
 <footer>
   <div class="footer-container">
-    <div class="footer-col">
-      <h4>About Us</h4>
-      <p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#">Home</a>
-      <a href="#">Inspiration</a>
-      <a href="#">News</a>
-    </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
+    <div class="footer-col"><h4>About Us</h4><p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Inspiration</a><a href="#">News</a></div>
+    <div class="footer-col"><h4>Follow Us</h4>
       <div class="social-links">
         <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="tw"><i class="fab fa-x-twitter"></i></a>
@@ -157,49 +137,44 @@ footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#ff
   <div class="footer-bottom">&copy; <span id="footerYear"></span> Unique Voice. All rights reserved.</div>
 </footer>
 
-<!-- Comment Modal -->
-<div class="modal" id="commentModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3>Comments</h3>
-      <button id="closeModal">&times;</button>
-    </div>
-    <div id="commentList"></div>
-    <form class="comment-form" id="commentForm">
-      <input type="text" id="commentName" placeholder="Your Name" required>
-      <textarea id="commentText" placeholder="Your Comment..." rows="3" required></textarea>
-      <button type="submit">Post Comment</button>
-    </form>
-  </div>
-</div>
-
 <script>
-// Toggle mobile menu
 document.getElementById('menuToggle').onclick = () => document.getElementById('mainNav').classList.toggle('show');
 document.getElementById("footerYear").textContent = new Date().getFullYear();
 
-// Sample posts data
+// Real posts
 const posts = [
-  {id:"p1",title:"How resilience turned a drought year into success",img:"https://picsum.photos/900/600?random=51",category:"Motivation",author:"Field Reporter",date:"Oct 20, 2025",views:210,desc:"Inspiring story of persistence and innovation amidst challenges."},
-  {id:"p2",title:"Youth art movement revitalizes community spirit",img:"https://picsum.photos/900/600?random=52",category:"Culture",author:"Culture Desk",date:"Oct 19, 2025",views:134,desc:"A youth-led art movement is changing lives across local towns."},
-  {id:"p3",title:"County clinics upgraded with modern facilities",img:"https://picsum.photos/900/600?random=53",category:"Health",author:"Health Reporter",date:"Oct 18, 2025",views:96,desc:"Healthcare transformed with new clinics and modern tech."}
+  {
+    title: "Nyeri Community Launches Innovative Tree Planting Initiative",
+    img: "https://picsum.photos/900/600?random=101",
+    category: "Environment",
+    author: "Community Desk",
+    date: "Oct 28, 2025",
+    views: 85,
+    desc: "Local residents join hands to plant trees and promote sustainable living.",
+    url: "nyeri-community-launches-innovative-tree-planting-initiative.html"
+  },
+  {
+    title: "Youth Art Movement Revitalizes Community Spirit",
+    img: "https://picsum.photos/900/600?random=102",
+    category: "Culture",
+    author: "Culture Desk",
+    date: "Oct 27, 2025",
+    views: 134,
+    desc: "A youth-led art movement is changing lives across local towns.",
+    url: "youth-art-movement-revitalizes-community-spirit.html"
+  }
 ];
 
-// Helper to create slugs
-function slugify(text){return text.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');}
-
-// Populate grid, ticker & carousel
+// Populate grid, ticker, and carousel
 const grid = document.getElementById('postGrid');
 const ticker = document.getElementById('ticker');
 const slidesContainer = document.getElementById('slides');
 
 posts.forEach(p=>{
-  const slug = slugify(p.title);
-
   // Grid card
   const card = document.createElement('article');
   card.className = "story";
-  card.onclick = () => window.location.href = `/2025/026/${slug}.html`;
+  card.onclick = () => window.location.href = `/2025/026/${p.url}`;
   card.innerHTML = `
     <div style="position:relative;">
       <img src="${p.img}" alt="">
@@ -216,64 +191,24 @@ posts.forEach(p=>{
 
   // Ticker
   const tick = document.createElement('a');
-  tick.href = `/2025/026/${slug}.html`;
+  tick.href = `/2025/026/${p.url}`;
   tick.textContent = p.title;
   ticker.appendChild(tick);
 
-  // Hero carousel
+  // Carousel slide
   const slide = document.createElement('div');
   slide.className = 'slide';
-  slide.onclick = () => window.location.href = `/2025/026/${slug}.html`;
+  slide.onclick = () => window.location.href = `/2025/026/${p.url}`;
   slide.innerHTML = `<img src="${p.img}" alt=""><div class="kicker">${p.category}</div><div class="headline">${p.title}</div>`;
   slidesContainer.appendChild(slide);
 });
 
 // Carousel functionality
 let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-document.getElementById('prev').onclick = () => { currentSlide = (currentSlide-1+slides.length)%slides.length; updateCarousel(); };
-document.getElementById('next').onclick = () => { currentSlide = (currentSlide+1)%slides.length; updateCarousel(); };
 function updateCarousel(){ slidesContainer.style.transform = `translateX(-${currentSlide*100}%)`; }
-setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; updateCarousel(); },5000);
-
-// Comment modal logic
-const modal = document.getElementById('commentModal');
-let currentPost = null;
-document.addEventListener('click', e=>{
-  if(e.target.closest('.comment-btn')){
-    const btn = e.target.closest('.comment-btn');
-    e.stopPropagation();
-    currentPost = btn.dataset.id;
-    loadComments(currentPost);
-    modal.classList.add('show');
-  }
-});
-document.getElementById('closeModal').onclick = ()=>modal.classList.remove('show');
-window.onclick = e=>{if(e.target===modal) modal.classList.remove('show');};
-function loadComments(pid){
-  const commentList = document.getElementById('commentList');
-  commentList.innerHTML = "";
-  const comments = JSON.parse(localStorage.getItem("comments-"+pid)||"[]");
-  if(comments.length===0) commentList.innerHTML="<p>No comments yet.</p>";
-  comments.forEach(c=>{
-    const div = document.createElement('div');
-    div.className='comment';
-    div.innerHTML=`<strong>${c.name}</strong><p>${c.text}</p>`;
-    commentList.appendChild(div);
-  });
-}
-document.getElementById('commentForm').onsubmit = e=>{
-  e.preventDefault();
-  const name = document.getElementById('commentName').value.trim();
-  const text = document.getElementById('commentText').value.trim();
-  if(!name||!text)return;
-  const key = "comments-"+currentPost;
-  const comments = JSON.parse(localStorage.getItem(key)||"[]");
-  comments.push({name,text});
-  localStorage.setItem(key,JSON.stringify(comments));
-  loadComments(currentPost);
-  e.target.reset();
-};
+document.getElementById('prev').onclick = () => { currentSlide=(currentSlide-1+posts.length)%posts.length; updateCarousel(); };
+document.getElementById('next').onclick = () => { currentSlide=(currentSlide+1)%posts.length; updateCarousel(); };
+setInterval(()=>{ currentSlide=(currentSlide+1)%posts.length; updateCarousel(); },5000);
 </script>
 </body>
 </html>
