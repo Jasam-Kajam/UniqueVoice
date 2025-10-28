@@ -1,22 +1,33 @@
-[
+// Real posts
+const posts = [
   {
-    "title": "Nyeri Community Launches Innovative Tree Planting Initiative",
-    "img": "https://picsum.photos/900/600?random=101",
-    "category": "Environment",
-    "author": "Community Desk",
-    "date": "Oct 28, 2025",
-    "views": 85,
-    "desc": "Local residents join hands to plant trees and promote sustainable living.",
-    "url": "nyeri-community-launches-innovative-tree-planting-initiative.html"
+    title: "Nyeri Community Launches Innovative Tree Planting Initiative",
+    img: "https://picsum.photos/900/600?random=101",
+    category: "Environment",
+    author: "Community Desk",
+    date: "Oct 28, 2025",
+    views: 85,
+    desc: "Local residents join hands to plant trees and promote sustainable living.",
+    url: "nyeri-community-launches-innovative-tree-planting-initiative.html"
   },
   {
-    "title": "Youth Art Movement Revitalizes Community Spirit",
-    "img": "https://picsum.photos/900/600?random=102",
-    "category": "Culture",
-    "author": "Culture Desk",
-    "date": "Oct 27, 2025",
-    "views": 134,
-    "desc": "A youth-led art movement is changing lives across local towns.",
-    "url": "youth-art-movement-revitalizes-community-spirit.html"
+    title: "Youth Art Movement Revitalizes Community Spirit",
+    img: "https://picsum.photos/900/600?random=102",
+    category: "Culture",
+    author: "Culture Desk",
+    date: "Oct 27, 2025",
+    views: 134,
+    desc: "A youth-led art movement is changing lives across local towns.",
+    url: "youth-art-movement-revitalizes-community-spirit.html"
+  },
+  {
+    title: "How Resilience Turned a Drought Year into Success",
+    img: "https://picsum.photos/900/600?random=103",
+    category: "Motivation",
+    author: "Field Reporter",
+    date: "Oct 26, 2025",
+    views: 210,
+    desc: "Inspiring story of persistence and innovation amidst challenges.",
+    url: "how-resilience-turned-a-drought-year-into-success.html"
   }
-]
+];
