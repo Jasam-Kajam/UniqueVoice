@@ -1,70 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts Demo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-    }
-    #posts-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .post-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 15px;
-      transition: transform 0.2s;
-    }
-    .post-card:hover {
-      transform: translateY(-5px);
-    }
-    .post-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .post-card h2 {
-      margin: 10px 0 5px;
-      font-size: 18px;
-    }
-    .post-card p {
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <h1>Latest Posts</h1>
-  <div id="posts-container"></div>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Unique Voice</title>
+<meta name="description" content="Unique Voice — bringing you cultural, business, and motivational news from across the country." />
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <script>
-    fetch('posts.json')
-      .then(response => response.json())
-      .then(posts => {
-        const container = document.getElementById('posts-container');
-        posts.forEach(post => {
-          const card = document.createElement('div');
-          card.className = 'post-card';
-          card.innerHTML = `
-            <img src="${post.thumbnail}" alt="${post.title}">
-            <h2>${post.title}</h2>
-            <p>${post.content}</p>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(err => console.error('Failed to load posts.json:', err));
-  </script>
+<style>
+:root {
+  --primary:#ff7043; --accent:#fbc02d; --bg:#fffaf3; --text:#2c2c2c; --muted:#666;
+  --card:#ffffff; --shadow:0 6px 14px rgba(0,0,0,.08); --footer:#d84315; --footer2:#ad1457; --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%; font-family:Inter,system-ui,Arial,sans-serif; background:var(--bg); color:var(--text); display:flex; flex-direction:column;}
+main{flex:1; display:flex; flex-direction:column;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:28px; width:100%;}
+header{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:6px 0; position:relative;}
+.brand{display:flex; align-items:center; gap:12px;}
+.logo{font-weight:800; color:#111; font-size:22px; font-family:'Merriweather',serif;}
+.tag{color:var(--muted); font-size:13px;}
+nav{display:flex; gap:18px; align-items:center;}
+nav a{color:#222; text-decoration:none; font-weight:600; font-size:14px;}
+nav a:hover{color:var(--primary);}
+.hamburger{display:none; font-size:24px; cursor:pointer;}
+.actions{display:flex; gap:12px; align-items:center;}
+.btn{background:var(--primary); color:#fff; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
+.ghost{background:transparent; border:2px solid var(--primary); color:var(--primary); padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
+
+/* Ticker */
+.trending { background:#fff; border-radius:8px; padding:8px 12px; margin:12px 0; display:flex; align-items:center; gap:12px; overflow:hidden; box-shadow:var(--shadow);}
+.trending .tag{font-weight:700; color: red; font-size:13px;}
+.ticker{display:flex; gap:30px; white-space:nowrap; overflow:hidden; animation:scroll 20s linear infinite;}
+.ticker a{color:var(--muted); font-size:14px; text-decoration:none;}
+.ticker a:hover{color:var(--primary); text-decoration:underline;}
+@keyframes scroll { from { transform:translateX(100%); } to { transform:translateX(-100%); } }
+
+.section{margin-top:30px;}
+.section-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+.section-title{font-family:'Merriweather',serif; font-size:22px; color:var(--primary);}
+.section-sub{color:var(--muted); font-size:13px;}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px;}
+.story{background:var(--card); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer; transition:transform .3s ease; display:flex; flex-direction:column;}
+.story:hover{transform:translateY(-6px);}
+.story img{width:100%; height:240px; object-fit:cover;}
+.category-label{position:absolute; left:12px; bottom:12px; background:rgba(255,255,255,0.9); color:var(--primary); border:4px solid var(--accent); padding:3px 10px; font-size:12px; font-weight:700; border-radius:8px;}
+.meta{color:var(--muted); font-size:13px; padding:0 12px 10px; display:flex; align-items:center; flex-wrap:wrap; gap:10px;}
+.meta i{color:var(--primary);}
+.meta span{display:flex; align-items:center; gap:4px;}
+.story h3{font-family:'Merriweather',serif; margin:10px 0 6px; font-size:18px; padding:0 12px;}
+footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#fff; padding:50px 20px 20px; margin-top:auto;}
+.footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
+.footer-col h4{margin-bottom:15px; font-size:18px; font-weight:700;}
+.footer-col p{font-size:14px; line-height:1.6; opacity:.9;}
+.footer-col a{color:#fff; text-decoration:none; font-size:14px; margin:6px 0; display:block; opacity:.9;}
+.footer-col a:hover{opacity:1; text-decoration:underline;}
+.social-links{display:flex; gap:14px; margin-top:10px; flex-wrap:wrap;}
+.social-links a{width:55px; height:55px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-size:1.4rem; box-shadow:0 4px 10px rgba(0,0,0,.2); transition:all 0.3s ease;}
+.social-links a:hover{transform:scale(1.15) rotate(5deg); opacity:0.9;}
+.fb{background:#1877f2;} .tw{background:#1da1f2;} .ig{background:linear-gradient(45deg,#fd1d1d,#fcb045,#833ab4);} .ln{background:#0077b5;}
+.newsletter{background:#000; color:#fff; padding:18px; border-radius:12px;}
+.newsletter input{width:100%; padding:12px; border-radius:8px; border:none; margin-bottom:10px;}
+.newsletter button{background:var(--accent); border:none; color:#fff; padding:12px 14px; border-radius:8px; font-weight:600; cursor:pointer;}
+.newsletter button:hover{background:#f9a825;}
+.footer-bottom{text-align:center; margin-top:30px; font-size:13px; opacity:.85; border-top:1px solid rgba(255,255,255,0.2); padding-top:10px;}
+
+/* Hero carousel */
+.carousel{position:relative; overflow:hidden; border-radius:12px; margin-bottom:20px;}
+.slides{display:flex; transition:transform .5s ease;}
+.slide{min-width:100%; cursor:pointer; position:relative;}
+.slide img{width:100%; height:240px; object-fit:cover;}
+.slide .kicker{position:absolute; left:16px; top:16px; background:var(--accent); color:#fff; padding:5px 12px; border-radius:6px; font-weight:700;}
+.slide .headline{position:absolute; left:16px; bottom:24px; color:#fff; font-family:'Merriweather',serif; font-size:24px; font-weight:700; background:rgba(0,0,0,0.5); padding:10px 16px; border-radius:6px;}
+.carousel-controls{position:absolute; top:50%; left:0; right:0; display:flex; justify-content:space-between; transform:translateY(-50%);}
+.carousel-controls .ctrl{background:rgba(0,0,0,0.5); border:none; color:#fff; font-size:32px; padding:6px 12px; cursor:pointer; border-radius:6px;}
+@media(max-width:700px){.wrap{padding:16px;} nav{display:none; flex-direction:column; position:absolute; top:60px; right:20px; background:#fff; padding:14px; border-radius:10px; box-shadow:var(--shadow);} nav.show{display:flex;} .hamburger{display:block;} .grid{grid-template-columns:1fr;}}
+</style>
+</head>
+
+<body>
+<main>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo">Unique Voice</div><div class="tag">Culture • Business • Inspiration</div></div>
+  <div class="hamburger" id="menuToggle">☰</div>
+  <nav id="mainNav"><a href="#">Home</a><a href="#">Local</a><a href="#">Business</a><a href="#">Politics</a></nav>
+  <div class="actions"><a class="ghost" href="#subscribe">Subscribe</a><a class="btn" href="#">Donate</a></div>
+</header>
+
+<!-- Trending Ticker -->
+<div class="trending">
+  <div class="tag"><i class="fa-solid fa-bolt"></i> Trending</div>
+  <div class="ticker" id="ticker"></div>
+</div>
+</div>
+
+<!-- Hero Carousel -->
+<section class="hero">
+  <div class="carousel card">
+    <div class="slides" id="slides"></div>
+    <div class="carousel-controls">
+      <button class="ctrl" id="prev">‹</button>
+      <button class="ctrl" id="next">›</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <div class="section-title">Top Stories</div>
+    <div class="section-sub">Editor’s choice for you</div>
+  </div>
+  <div class="grid" id="postGrid"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-col"><h4>About Us</h4><p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Inspiration</a><a href="#">News</a></div>
+    <div class="footer-col"><h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="tw"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="ln"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col newsletter" id="subscribe">
+      <h4>Newsletter</h4>
+      <input type="email" id="newsletterEmail" placeholder="Enter your email">
+      <button type="button" id="subscribeBtn">Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; <span id="footerYear"></span> Unique Voice. All rights reserved.</div>
+</footer>
+
+<script>
+document.getElementById('menuToggle').onclick = () => document.getElementById('mainNav').classList.toggle('show');
+document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+// Real posts
+const posts = [
+  {
+    title: "Nyeri Community Launches Innovative Tree Planting Initiative",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg31NDI-fgmPh79WCUHuIlGJ4J3x41aeoOgjTEI54nqswIJlov-1BXWCfhgOdId5vkeCNw3OuhKSxOLxlt-ERb5rJlcH7ootxhfKrdcJExtA7ROr2cgsiib1Z_LZE7nbSR3cMk7CqJ4xTDlJa5xmfLJEP81WZ2PZkrvArcr8m9Y_yMYZq5jKgAgXhNaa3c4/s720/1000181892.jpg",
+    category: "Environment",
+    author: "Community Desk",
+    date: "Oct 28, 2025",
+    views: 85,
+    desc: "Local residents join hands to plant trees and promote sustainable living.",
+    url: "nyeri-community-launches-innovative-tree-planting-initiative.html"
+  },
+  {
+    title: "Youth Art Movement Revitalizes Community Spirit",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKHDAdNpso0DuKcvBzSglf3vrN4szm2pPeKj6JsXouNZXa46yErmvUjSZeskmJmURaetSv7M0wQTo7t3Yp0FNQ09NUxW6FlRAF2Hz1hxUOtmP-IS6caiogg6W_SDahIBUPaQnGWnaW9JErh6fnHnstx4cn4VT5m3RZ23xrJzBgzII45x5giVGt_qp5Tx_I/s552/1750842117633.jpg",
+    category: "Culture",
+    author: "Culture Desk",
+    date: "Oct 27, 2025",
+    views: 134,
+    desc: "A youth-led art movement is changing lives across local towns.",
+    url: "youth-art-movement-revitalizes-community-spirit.html"
+  },
+  {
+    title: "How Resilience Turned a Drought Year into Success",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLxUxk9PWk8dntxH-HwQYetv6muroJkBgE31-uYYsSx_IrMsdzLf2-_htmY-KXgniqYgy7j_7S6W_fjkfVF7j3gIV-Qxjww6kLsnkYLUCHnFIhrrujMYl56OSAUuYNmNG_iDWZRvyN7h9lP1Q7Pu7dzg7Muiqclv3W4NSe8FNVzX3IU-K06ZG0wjAhN5su/s1280/1000187294.jpg",
+    category: "Motivation",
+    author: "Field Reporter",
+    date: "Oct 26, 2025",
+    views: 210,
+    desc: "Inspiring story of persistence and innovation amidst challenges.",
+    url: "how-resilience-turned-a-drought-year-into-success.html"
+  }
+];
+
+// Populate page
+function populatePosts() {
+  const grid = document.getElementById('postGrid');
+  const ticker = document.getElementById('ticker');
+  const slidesContainer = document.getElementById('slides');
+
+  posts.forEach(p => {
+    // Grid card
+    const card = document.createElement('article');
+    card.className = "story";
+    card.onclick = () => window.location.href = `/2025/026/${p.url}`;
+    card.innerHTML = `
+      <div style="position:relative;">
+        <img src="${p.img}" alt="">
+        <div class="category-label">${p.category}</div>
+      </div>
+      <h3>${p.title}</h3>
+      <div class="meta">
+        <span><i class="fa-solid fa-user"></i>${p.author}</span>
+        <span><i class="fa-solid fa-calendar"></i>${p.date}</span>
+        <span><i class="fa-solid fa-eye"></i>${p.views}</span>
+      </div>
+      <p style="padding:0 12px 14px;">${p.desc}</p>`;
+    grid.appendChild(card);
+
+    // Ticker
+    const tick = document.createElement('a');
+    tick.href = `/2025/026/${p.url}`;
+    tick.textContent = p.title;
+    ticker.appendChild(tick);
+
+    // Carousel slide
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    slide.onclick = () => window.location.href = `/2025/026/${p.url}`;
+    slide.innerHTML = `<img src="${p.img}" alt=""><div class="kicker">${p.category}</div><div class="headline">${p.title}</div>`;
+    slidesContainer.appendChild(slide);
+  });
+
+  // Carousel functionality
+  let currentSlide = 0;function updateCarousel() { 
+    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`; 
+  }
+
+  document.getElementById('prev').onclick = () => { 
+    currentSlide = (currentSlide - 1 + posts.length) % posts.length; 
+    updateCarousel(); 
+  };
+
+  document.getElementById('next').onclick = () => { 
+    currentSlide = (currentSlide + 1) % posts.length; 
+    updateCarousel(); 
+  };
+
+  // Auto-slide every 5 seconds
+  setInterval(() => { 
+    currentSlide = (currentSlide + 1) % posts.length; 
+    updateCarousel(); 
+  }, 5000);
+}
+
+// Initialize posts on page load
+populatePosts();
+</script>
 </body>
 </html>
