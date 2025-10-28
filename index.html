@@ -1,4 +1,3 @@
-</body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,47 +93,54 @@ footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#ff
 
 <body>
 <main>
-<div class="wrap">
-<header>
-  <div class="brand"><div class="logo">Unique Voice</div><div class="tag">Culture • Business • Inspiration</div></div>
-  <div class="hamburger" id="menuToggle">☰</div>
-  <nav id="mainNav"><a href="#">Home</a><a href="#">Local</a><a href="#">Business</a><a href="#">Politics</a></nav>
-  <div class="actions"><a class="ghost" href="#subscribe">Subscribe</a><a class="btn" href="#">Donate</a></div>
-</header>
-<!-- 🔥 Trending Ticker -->
-<div class="trending">
-  <div class="tag"><i class="fa-solid fa-bolt"></i> Trending</div>
-  <div class="ticker" id="ticker"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- 🔥 Hero Carousel -->
-<section class="hero">
-  <div class="carousel card">
-    <div class="slides" id="slides"></div>
-    <div class="carousel-controls">
-      <button class="ctrl" id="prev">‹</button>
-     <button class="ctrl" id="next">›</button>
+  <div class="wrap">
+    <header>
+      <div class="brand"><div class="logo">Unique Voice</div><div class="tag">Culture • Business • Inspiration</div></div>
+      <div class="hamburger" id="menuToggle">☰</div>
+      <nav id="mainNav"><a href="#">Home</a><a href="#">Local</a><a href="#">Business</a><a href="#">Politics</a></nav>
+      <div class="actions"><a class="ghost" href="#subscribe">Subscribe</a><a class="btn" href="#">Donate</a></div>
+    </header>
+
+    <!-- 🔥 Trending Ticker -->
+    <div class="trending">
+      <div class="tag"><i class="fa-solid fa-bolt"></i> Trending</div>
+      <div class="ticker" id="ticker"></div>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="section-header">
-    <div class="section-title">Top Stories</div>
-    <div class="section-sub">Editor’s choice for you</div>
-  </div>
-  <div class="grid" id="postGrid"></div>
-</section>
-</div>
+  <!-- 🔥 Hero Carousel -->
+  <section class="hero">
+    <div class="carousel card">
+      <div class="slides" id="slides"></div>
+      <div class="carousel-controls">
+        <button class="ctrl" id="prev">‹</button>
+        <button class="ctrl" id="next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Top Stories</div>
+      <div class="section-sub">Editor’s choice for you</div>
+    </div<div class="grid" id="postGrid"></div>
+  </section>
 </main>
 
 <footer>
   <div class="footer-container">
-    <div class="footer-col"><h4>About Us</h4><p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p></div>
-    <div class="footer-col"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Inspiration</a><a href="#">News</a></div>
-    <div class="footer-col"><h4>Follow Us</h4>
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Inspiration</a>
+      <a href="#">News</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
       <div class="social-links">
         <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="tw"><i class="fab fa-x-twitter"></i></a>
@@ -168,25 +174,26 @@ footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#ff
 </div>
 
 <script>
+// Toggle mobile menu
 document.getElementById('menuToggle').onclick = () => document.getElementById('mainNav').classList.toggle('show');
 document.getElementById("footerYear").textContent = new Date().getFullYear();
 
-// Sample posts
+// Sample posts data
 const posts = [
   {id:"p1",title:"How resilience turned a drought year into success",img:"https://picsum.photos/900/600?random=51",category:"Motivation",author:"Field Reporter",date:"Oct 20, 2025",views:210,desc:"Inspiring story of persistence and innovation amidst challenges."},
   {id:"p2",title:"Youth art movement revitalizes community spirit",img:"https://picsum.photos/900/600?random=52",category:"Culture",author:"Culture Desk",date:"Oct 19, 2025",views:134,desc:"A youth-led art movement is changing lives across local towns."},
   {id:"p3",title:"County clinics upgraded with modern facilities",img:"https://picsum.photos/900/600?random=53",category:"Health",author:"Health Reporter",date:"Oct 18, 2025",views:96,desc:"Healthcare transformed with new clinics and modern tech."}
 ];
 
-// Helper to create slug
+// Helper to create slugs
 function slugify(text){return text.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');}
 
-// Populate post grid & ticker
+// Populate grid, ticker & carousel
 const grid = document.getElementById('postGrid');
 const ticker = document.getElementById('ticker');
 const slidesContainer = document.getElementById('slides');
 
-posts.forEach((p,index)=>{
+posts.forEach(p=>{
   const slug = slugify(p.title);
 
   // Grid card
@@ -194,17 +201,17 @@ posts.forEach((p,index)=>{
   card.className = "story";
   card.onclick = () => window.location.href = `/2025/026/${slug}.html`;
   card.innerHTML = `
-  <div style="position:relative;">
-    <img src="${p.img}" alt="">
-    <div class="category-label">${p.category}</div>
-  </div>
-  <h3>${p.title}</h3>
-  <div class="meta">
-    <span><i class="fa-solid fa-user"></i>${p.author}</span>
-    <span><i class="fa-solid fa-calendar"></i>${p.date}</span>
-    <span><i class="fa-solid fa-eye"></i>${p.views}</span>
-  </div>
-  <p style="padding:0 12px 14px;">${p.desc}</p>`;
+    <div style="position:relative;">
+      <img src="${p.img}" alt="">
+      <div class="category-label">${p.category}</div>
+    </div>
+    <h3>${p.title}</h3>
+    <div class="meta">
+      <span><i class="fa-solid fa-user"></i>${p.author}</span>
+      <span><i class="fa-solid fa-calendar"></i>${p.date}</span>
+      <span><i class="fa-solid fa-eye"></i>${p.views}</span>
+    </div>
+    <p style="padding:0 12px 14px;">${p.desc}</p>`;
   grid.appendChild(card);
 
   // Ticker
@@ -213,7 +220,7 @@ posts.forEach((p,index)=>{
   tick.textContent = p.title;
   ticker.appendChild(tick);
 
-  // Hero carousel slide
+  // Hero carousel
   const slide = document.createElement('div');
   slide.className = 'slide';
   slide.onclick = () => window.location.href = `/2025/026/${slug}.html`;
@@ -224,18 +231,10 @@ posts.forEach((p,index)=>{
 // Carousel functionality
 let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
-document.getElementById('prev').onclick = () => {
-  currentSlide = (currentSlide-1+slides.length)%slides.length;
-  updateCarousel();
-};
-document.getElementById('next').onclick = () => {
-  currentSlide = (currentSlide+1)%slides.length;
-  updateCarousel();
-};
-function updateCarousel(){
-  slidesContainer.style.transform = `translateX(-${currentSlide*100}%)`;
-}
-setInterval(()=>{currentSlide=(currentSlide+1)%slides.length; updateCarousel();},5000);
+document.getElementById('prev').onclick = () => { currentSlide = (currentSlide-1+slides.length)%slides.length; updateCarousel(); };
+document.getElementById('next').onclick = () => { currentSlide = (currentSlide+1)%slides.length; updateCarousel(); };
+function updateCarousel(){ slidesContainer.style.transform = `translateX(-${currentSlide*100}%)`; }
+setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; updateCarousel(); },5000);
 
 // Comment modal logic
 const modal = document.getElementById('commentModal');
