@@ -2,7 +2,7 @@
 const posts = [
   {
     title: "Nyeri Community Launches Innovative Tree Planting Initiative",
-    img: "https://picsum.photos/900/600?random=101",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg31NDI-fgmPh79WCUHuIlGJ4J3x41aeoOgjTEI54nqswIJlov-1BXWCfhgOdId5vkeCNw3OuhKSxOLxlt-ERb5rJlcH7ootxhfKrdcJExtA7ROr2cgsiib1Z_LZE7nbSR3cMk7CqJ4xTDlJa5xmfLJEP81WZ2PZkrvArcr8m9Y_yMYZq5jKgAgXhNaa3c4/s720/1000181892.jpg",
     category: "Environment",
     author: "Community Desk",
     date: "Oct 28, 2025",
@@ -12,7 +12,7 @@ const posts = [
   },
   {
     title: "Youth Art Movement Revitalizes Community Spirit",
-    img: "https://picsum.photos/900/600?random=102",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKHDAdNpso0DuKcvBzSglf3vrN4szm2pPeKj6JsXouNZXa46yErmvUjSZeskmJmURaetSv7M0wQTo7t3Yp0FNQ09NUxW6FlRAF2Hz1hxUOtmP-IS6caiogg6W_SDahIBUPaQnGWnaW9JErh6fnHnstx4cn4VT5m3RZ23xrJzBgzII45x5giVGt_qp5Tx_I/s552/1750842117633.jpg",
     category: "Culture",
     author: "Culture Desk",
     date: "Oct 27, 2025",
@@ -22,7 +22,7 @@ const posts = [
   },
   {
     title: "How Resilience Turned a Drought Year into Success",
-    img: "https://picsum.photos/900/600?random=103",
+    img: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLxUxk9PWk8dntxH-HwQYetv6muroJkBgE31-uYYsSx_IrMsdzLf2-_htmY-KXgniqYgy7j_7S6W_fjkfVF7j3gIV-Qxjww6kLsnkYLUCHnFIhrrujMYl56OSAUuYNmNG_iDWZRvyN7h9lP1Q7Pu7dzg7Muiqclv3W4NSe8FNVzX3IU-K06ZG0wjAhN5su/s1280/1000187294.jpg",
     category: "Motivation",
     author: "Field Reporter",
     date: "Oct 26, 2025",
