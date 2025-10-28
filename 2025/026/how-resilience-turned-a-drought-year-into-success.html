@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How Resilience Turned a Drought Year into Success | Unique Voice</title>
+  <meta name="description" content="An inspiring story of resilience, innovation, and community during one of the harshest droughts in 2025." />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary:#ff7043;
+      --accent:#fbc02d;
+      --bg:#fffaf3;
+      --text:#2c2c2c;
+      --muted:#666;
+      --card:#ffffff;
+      --shadow:0 6px 14px rgba(0,0,0,.08);
+      --footer:#d84315;
+      --footer2:#ad1457;
+      --maxw:1200px;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html,body {
+      height:100%; font-family:Inter,system-ui,Arial,sans-serif;
+      background:var(--bg); color:var(--text);
+      display:flex; flex-direction:column;
+    }
+    main{flex:1; display:flex; flex-direction:column;}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px; width:100%;}
+    header{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:6px 0; position:relative;}
+    .brand{display:flex; align-items:center; gap:12px;}
+    .logo{font-weight:800; color:#111; font-size:22px; font-family:'Merriweather',serif;}
+    .tag{color:var(--muted); font-size:13px;}
+    nav{display:flex; gap:18px; align-items:center;}
+    nav a{color:#222; text-decoration:none; font-weight:600; font-size:14px;}
+    nav a:hover{color:var(--primary);}
+    .hamburger{display:none; font-size:24px; cursor:pointer;}
+    .actions{display:flex; gap:12px; align-items:center;}
+    .btn{background:var(--primary); color:#fff; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
+    .ghost{background:transparent; border:2px solid var(--primary); color:var(--primary); padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
+
+    /* Article Styles */
+    article.post { background:var(--card); padding:24px; border-radius:12px; box-shadow:var(--shadow); max-width:900px; margin:0 auto;}
+    article.post h1{font-family:'Merriweather',serif; font-size:28px; margin-bottom:16px; color:var(--primary);}
+    article.post p{margin-bottom:14px; line-height:1.7; color:var(--text);}
+    article.post ul{margin-left:20px; margin-bottom:14px;}
+    article.post li{margin-bottom:8px;}
+
+    footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#fff; padding:50px 20px 20px; margin-top:auto;}
+    .footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
+    .footer-col h4{margin-bottom:15px; font-size:18px; font-weight:700;}
+    .footer-col p{font-size:14px; line-height:1.6; opacity:.9;}
+    .footer-col a{color:#fff; text-decoration:none; font-size:14px; margin:6px 0; display:block; opacity:.9;}
+    .footer-col a:hover{opacity:1; text-decoration:underline;}
+    .social-links{display:flex; gap:14px; margin-top:10px; flex-wrap:wrap;}
+    .social-links a{width:55px; height:55px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-size:1.4rem; box-shadow:0 4px 10px rgba(0,0,0,.2); transition:all 0.3s ease;}
+    .social-links a:hover{transform:scale(1.15) rotate(5deg); opacity:0.9;}
+    .fb{background:#1877f2;} .tw{background:#1da1f2;} .ig{background:linear-gradient(45deg,#fd1d1d,#fcb045,#833ab4);} .ln{background:#0077b5;}
+    .newsletter{background:#000; color:#fff; padding:18px; border-radius:12px;}
+    .newsletter input{width:100%; padding:12px; border-radius:8px; border:none; margin-bottom:10px;}
+    .newsletter button{background:var(--accent); border:none; color:#fff; padding:12px 14px; border-radius:8px; font-weight:600; cursor:pointer;}
+    .newsletter button:hover{background:#f9a825;}
+    .footer-bottom{text-align:center; margin-top:30px; font-size:13px; opacity:.85; border-top:1px solid rgba(255,255,255,0.2); padding-top:10px;}
+
+    @media(max-width:700px){
+      .wrap{padding:16px;}
+      nav{display:none; flex-direction:column; position:absolute; top:60px; right:20px; background:#fff; padding:14px; border-radius:10px; box-shadow:var(--shadow);}
+      nav.show{display:flex;}
+      .hamburger{display:block;}
+    }
+  </style>
+</head>
+
+<body>
+<main>
+<div class="wrap">
+<header>
+  <div class="brand">
+    <div class="logo">Unique Voice</div>
+    <div class="tag">Culture • Business • Inspiration</div>
+  </div>
+  <div class="hamburger" id="menuToggle">☰</div>
+  <nav id="mainNav">
+    <a href="#">Home</a><a href="#">Local</a><a href="#">Business</a><a href="#">Politics</a>
+  </nav>
+  <div class="actions">
+    <a class="ghost" href="#subscribe">Subscribe</a>
+    <a class="btn" href="#">Donate</a>
+  </div>
+</header>
+
+<!-- Article Section -->
+<article class="post">
+  <h1>How Resilience Turned a Drought Year into Success</h1>
+
+  <p>In 2025, communities across the country faced one of the harshest droughts in recent memory. Rivers ran dry, crops withered, and many families struggled to secure their daily needs. For many, it seemed like a year destined for despair. Yet, amid the uncertainty and hardship, stories of resilience and ingenuity began to emerge—proof that determination can turn even the toughest challenges into opportunities.</p>
+
+  <p>Take the story of the Mwangi family from Kitale. Traditionally dependent on maize farming, the drought left their fields barren. Instead of giving up, they diversified into alternative crops that required less water, such as sorghum and beans. They also implemented innovative water conservation methods, collecting rainwater and adopting drip irrigation techniques. Within months, their small farm began producing enough to feed their family and sell the surplus at the local market.</p>
+
+  <p>Local entrepreneurs, too, found ways to turn adversity into advantage. A group of young innovators in Eldoret launched a solar-powered irrigation system to support small-scale farmers. Their initiative not only helped communities survive the drought but also created employment and attracted investors from outside the region.</p>
+
+  <p>Experts say that resilience in such challenging times is not just about physical endurance but also mental and emotional strength. Communities that came together to share resources, knowledge, and encouragement were far better equipped to adapt and thrive.</p>
+
+  <p>By the end of the year, what started as a period of extreme scarcity had transformed into a story of ingenuity, solidarity, and hope. Families learned new farming methods, entrepreneurs discovered innovative solutions, and communities forged stronger bonds.</p>
+
+  <p>The drought of 2025 serves as a powerful reminder that challenges, no matter how severe, can catalyze growth when met with resilience, creativity, and determination. For those who weathered the storm, success wasn’t just about survival—it was about thriving against the odds.</p>
+
+  <h2>Key Takeaways:</h2>
+  <ul>
+    <li>Diversify and adapt strategies in the face of adversity.</li>
+    <li>Innovate using available resources and modern techniques.</li>
+    <li>Strength lies in community support and shared knowledge.</li>
+    <li>Mental and emotional resilience is as important as physical action.</li>
+  </ul>
+
+  <p>The drought year proved that while we cannot always control external circumstances, our response can turn even the bleakest moments into stepping stones toward success.</p>
+
+</article></div>
+</main><footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#">Inspiration</a>
+      <a href="#">News</a>
+      <a href="#">Business</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="tw"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="ln"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col newsletter" id="subscribe">
+      <h4>Newsletter</h4>
+      <input type="email" id="newsletterEmail" placeholder="Enter your email">
+      <button type="button" id="subscribeBtn">Subscribe</button>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; <span id="footerYear"></span> Unique Voice. All rights reserved.</div>
+</footer><script>
+  document.getElementById('menuToggle').onclick = () => {
+    document.getElementById('mainNav').classList.toggle('show');
+  };
+  document.getElementById("footerYear").textContent = new Date().getFullYear();
+</script></body>
+</html>
