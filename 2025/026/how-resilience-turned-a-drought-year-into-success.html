@@ -1,78 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>How Resilience Turned a Drought Year into Success | Unique Voice</title>
-  <meta name="description" content="An inspiring story of resilience, innovation, and community during one of the harshest droughts in 2025." />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Resilience Turned a Drought Year into Success | Unique Voice</title>
+<meta name="description" content="Inspiring story of resilience turning a harsh drought year into success for families and communities.">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    :root {
-      --primary:#ff7043;
-      --accent:#fbc02d;
-      --bg:#fffaf3;
-      --text:#2c2c2c;
-      --muted:#666;
-      --card:#ffffff;
-      --shadow:0 6px 14px rgba(0,0,0,.08);
-      --footer:#d84315;
-      --footer2:#ad1457;
-      --maxw:1200px;
-    }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html,body {
-      height:100%; font-family:Inter,system-ui,Arial,sans-serif;
-      background:var(--bg); color:var(--text);
-      display:flex; flex-direction:column;
-    }
-    main{flex:1; display:flex; flex-direction:column;}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px; width:100%;}
-    header{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:6px 0; position:relative;}
-    .brand{display:flex; align-items:center; gap:12px;}
-    .logo{font-weight:800; color:#111; font-size:22px; font-family:'Merriweather',serif;}
-    .tag{color:var(--muted); font-size:13px;}
-    nav{display:flex; gap:18px; align-items:center;}
-    nav a{color:#222; text-decoration:none; font-weight:600; font-size:14px;}
-    nav a:hover{color:var(--primary);}
-    .hamburger{display:none; font-size:24px; cursor:pointer;}
-    .actions{display:flex; gap:12px; align-items:center;}
-    .btn{background:var(--primary); color:#fff; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
-    .ghost{background:transparent; border:2px solid var(--primary); color:var(--primary); padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
+<style>
+:root {
+  --primary:#ff7043;
+  --accent:#fbc02d;
+  --bg:#fffaf3;
+  --text:#2c2c2c;
+  --muted:#666;
+  --card:#ffffff;
+  --shadow:0 6px 14px rgba(0,0,0,.08);
+  --footer:#d84315;
+  --footer2:#ad1457;
+  --maxw:1200px;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body {height:100%; font-family:Inter,system-ui,Arial,sans-serif; background:var(--bg); color:var(--text);}
+body {display:flex; flex-direction:column;}
+header, footer {width:100%;}
+main {flex:1; display:flex; flex-direction:column;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:28px; width:100%;}
+header{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:6px 0; position:relative;}
+.brand{display:flex; align-items:center; gap:12px;}
+.logo{font-weight:800; color:#111; font-size:22px; font-family:'Merriweather',serif;}
+.tag{color:var(--muted); font-size:13px;}
+nav{display:flex; gap:18px; align-items:center;}
+nav a{color:#222; text-decoration:none; font-weight:600; font-size:14px;}
+nav a:hover{color:var(--primary);}
+.hamburger{display:none; font-size:24px; cursor:pointer;}
+.actions{display:flex; gap:12px; align-items:center;}
+.btn{background:var(--primary); color:#fff; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
+.ghost{background:transparent; border:2px solid var(--primary); color:var(--primary); padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:700;}
 
-    /* Article Styles */
-    article.post { background:var(--card); padding:24px; border-radius:12px; box-shadow:var(--shadow); max-width:900px; margin:0 auto;}
-    article.post h1{font-family:'Merriweather',serif; font-size:28px; margin-bottom:16px; color:var(--primary);}
-    article.post p{margin-bottom:14px; line-height:1.7; color:var(--text);}
-    article.post ul{margin-left:20px; margin-bottom:14px;}
-    article.post li{margin-bottom:8px;}
+article{background:var(--card); padding:20px; border-radius:12px; box-shadow:var(--shadow); margin-top:20px;}
+article img{width:100%; border-radius:12px; margin:15px 0;}
+.category-badge{position:absolute; top:12px; left:12px; background:var(--primary); color:#fff; padding:4px 10px; font-size:12px; font-weight:700; border-radius:8px;}
+.article-title{font-family:'Merriweather',serif; font-size:28px; color:var(--primary); margin-bottom:10px;}
+.article-meta{display:flex; gap:15px; font-size:14px; color:var(--muted); margin-bottom:15px; align-items:center;}
+.article-meta img{width:40px; height:40px; border-radius:50%; object-fit:cover;}
+.article-content{line-height:1.8; margin-bottom:20px;}
+.key-takeaways{background:#fff3e0; padding:15px; border-left:4px solid var(--primary); border-radius:8px; margin-top:20px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; margin-top:20px;}
+.story{background:var(--card); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); cursor:pointer; display:flex; flex-direction:column; transition:transform .3s ease;}
+.story:hover{transform:translateY(-6px);}
+.story img{width:100%; height:180px; object-fit:cover;}
+.story .category-label{position:absolute; left:12px; bottom:12px; background:rgba(255,255,255,0.9); color:var(--primary); border:4px solid var(--accent); padding:3px 10px; font-size:12px; font-weight:700; border-radius:8px;}
+.story h3{font-family:'Merriweather',serif; margin:10px 0 6px; font-size:18px; padding:0 12px;}
+.story .meta{color:var(--muted); font-size:13px; padding:0 12px 10px; display:flex; align-items:center; flex-wrap:wrap; gap:10px;}
+.story .meta i{color:var(--primary);}
+.story .meta span{display:flex; align-items:center; gap:4px;}
+.story p{padding:0 12px 14px;}
 
-    footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#fff; padding:50px 20px 20px; margin-top:auto;}
-    .footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
-    .footer-col h4{margin-bottom:15px; font-size:18px; font-weight:700;}
-    .footer-col p{font-size:14px; line-height:1.6; opacity:.9;}
-    .footer-col a{color:#fff; text-decoration:none; font-size:14px; margin:6px 0; display:block; opacity:.9;}
-    .footer-col a:hover{opacity:1; text-decoration:underline;}
-    .social-links{display:flex; gap:14px; margin-top:10px; flex-wrap:wrap;}
-    .social-links a{width:55px; height:55px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-size:1.4rem; box-shadow:0 4px 10px rgba(0,0,0,.2); transition:all 0.3s ease;}
-    .social-links a:hover{transform:scale(1.15) rotate(5deg); opacity:0.9;}
-    .fb{background:#1877f2;} .tw{background:#1da1f2;} .ig{background:linear-gradient(45deg,#fd1d1d,#fcb045,#833ab4);} .ln{background:#0077b5;}
-    .newsletter{background:#000; color:#fff; padding:18px; border-radius:12px;}
-    .newsletter input{width:100%; padding:12px; border-radius:8px; border:none; margin-bottom:10px;}
-    .newsletter button{background:var(--accent); border:none; color:#fff; padding:12px 14px; border-radius:8px; font-weight:600; cursor:pointer;}
-    .newsletter button:hover{background:#f9a825;}
-    .footer-bottom{text-align:center; margin-top:30px; font-size:13px; opacity:.85; border-top:1px solid rgba(255,255,255,0.2); padding-top:10px;}
+footer{background:linear-gradient(45deg,var(--footer),var(--footer2)); color:#fff; padding:50px 20px 20px; margin-top:auto;}
+.footer-container{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px;}
+.footer-col h4{margin-bottom:15px; font-size:18px; font-weight:700;}
+.footer-col p, .footer-col a{font-size:14px; opacity:.9; color:#fff; text-decoration:none;}
+.footer-col a:hover{opacity:1; text-decoration:underline;}
+.social-links{display:flex; gap:14px; margin-top:10px; flex-wrap:wrap;}
+.social-links a{width:55px; height:55px; display:inline-flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; font-size:1.4rem; box-shadow:0 4px 10px rgba(0,0,0,.2); transition:all 0.3s ease;}
+.social-links a:hover{transform:scale(1.15) rotate(5deg); opacity:0.9;}
+.fb{background:#1877f2;} .tw{background:#1da1f2;} .ig{background:linear-gradient(45deg,#fd1d1d,#fcb045,#833ab4);} .ln{background:#0077b5;}
+.footer-bottom{text-align:center; margin-top:30px; font-size:13px; opacity:.85; border-top:1px solid rgba(255,255,255,0.2); padding-top:10px;}
 
-    @media(max-width:700px){
-      .wrap{padding:16px;}
-      nav{display:none; flex-direction:column; position:absolute; top:60px; right:20px; background:#fff; padding:14px; border-radius:10px; box-shadow:var(--shadow);}
-      nav.show{display:flex;}
-      .hamburger{display:block;}
-    }
-  </style>
+/* Comment Modal */
+.modal{position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); display:none; justify-content:center; align-items:center; z-index:999;}
+.modal.show{display:flex;}
+.modal-content{background:#fff; max-width:600px; width:90%; border-radius:12px; box-shadow:var(--shadow); padding:20px; max-height:80vh; overflow-y:auto;}
+.modal-header{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;}
+.modal-header h3{font-family:'Merriweather',serif;}
+.modal-header button{background:none; border:none; font-size:20px; cursor:pointer;}
+.comment{background:#f9f9f9; padding:10px; border-radius:8px; margin-bottom:8px;}
+.comment strong{color:var(--primary);}
+.comment-form input,.comment-form textarea{width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:8px;}
+.comment-form button{background:var(--primary); color:#fff; padding:10px 14px; border:none; border-radius:8px; font-weight:600; cursor:pointer;}
+
+@media(max-width:700px){
+  .wrap{padding:16px;}
+  nav{display:none; flex-direction:column; position:absolute; top:60px; right:20px; background:#fff; padding:14px; border-radius:10px;}
+  nav.show{display:flex;}
+  .hamburger{display:block;}
+}
+</style>
 </head>
-
 <body>
 <main>
 <div class="wrap">
@@ -91,66 +107,151 @@
   </div>
 </header>
 
-<!-- Article Section -->
-<article class="post">
-  <h1>How Resilience Turned a Drought Year into Success</h1>
-
-  <p>In 2025, communities across the country faced one of the harshest droughts in recent memory. Rivers ran dry, crops withered, and many families struggled to secure their daily needs. For many, it seemed like a year destined for despair. Yet, amid the uncertainty and hardship, stories of resilience and ingenuity began to emerge—proof that determination can turn even the toughest challenges into opportunities.</p>
-
-  <p>Take the story of the Mwangi family from Kitale. Traditionally dependent on maize farming, the drought left their fields barren. Instead of giving up, they diversified into alternative crops that required less water, such as sorghum and beans. They also implemented innovative water conservation methods, collecting rainwater and adopting drip irrigation techniques. Within months, their small farm began producing enough to feed their family and sell the surplus at the local market.</p>
-
-  <p>Local entrepreneurs, too, found ways to turn adversity into advantage. A group of young innovators in Eldoret launched a solar-powered irrigation system to support small-scale farmers. Their initiative not only helped communities survive the drought but also created employment and attracted investors from outside the region.</p>
-
-  <p>Experts say that resilience in such challenging times is not just about physical endurance but also mental and emotional strength. Communities that came together to share resources, knowledge, and encouragement were far better equipped to adapt and thrive.</p>
-
-  <p>By the end of the year, what started as a period of extreme scarcity had transformed into a story of ingenuity, solidarity, and hope. Families learned new farming methods, entrepreneurs discovered innovative solutions, and communities forged stronger bonds.</p>
-
-  <p>The drought of 2025 serves as a powerful reminder that challenges, no matter how severe, can catalyze growth when met with resilience, creativity, and determination. For those who weathered the storm, success wasn’t just about survival—it was about thriving against the odds.</p>
-
-  <h2>Key Takeaways:</h2>
-  <ul>
-    <li>Diversify and adapt strategies in the face of adversity.</li>
-    <li>Innovate using available resources and modern techniques.</li>
-    <li>Strength lies in community support and shared knowledge.</li>
-    <li>Mental and emotional resilience is as important as physical action.</li>
-  </ul>
-
-  <p>The drought year proved that while we cannot always control external circumstances, our response can turn even the bleakest moments into stepping stones toward success.</p>
-
-</article></div>
-</main><footer>
-  <div class="footer-container">
-    <div class="footer-col">
-      <h4>About Us</h4>
-      <p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="#">Home</a>
-      <a href="#">Inspiration</a>
-      <a href="#">News</a>
-      <a href="#">Business</a>
-    </div>
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <div class="social-links">
-        <a href="#" class="fb"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="tw"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" class="ig"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="ln"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-    <div class="footer-col newsletter" id="subscribe">
-      <h4>Newsletter</h4>
-      <input type="email" id="newsletterEmail" placeholder="Enter your email">
-      <button type="button" id="subscribeBtn">Subscribe</button>
+<article>
+  <h1 class="article-title">How Resilience Turned a Drought Year into Success</h1>
+  
+  <div class="article-meta">
+    <img src="https://picsum.photos/50/50?random=101" alt="Author">
+    <span><strong>Jane Mwangi</strong></span>
+    <span><i class="fa-solid fa-calendar"></i> Oct 20, 2025</span>
+    <span><i class="fa-solid fa-eye"></i> 210</span>
+    <span class="comment-btn" id="openComments" style="cursor:pointer;"><i class="fa-solid fa-comment"></i> 0</span>
+  </div>
+   <div style="position:relative;">
+    <img src="https://picsum.photos/900/500?random=204" alt="Community support" alt="Drought field">
+    <div class="category-badge">Agriculture</div>
+  </div>
+  <div class="article-content">
+    <p>In 2025, communities across the country faced one of the harshest droughts in recent memory. Rivers ran dry, crops withered, and many families struggled to secure their daily needs. For many, it seemed like a year destined for despair. Yet, amid the uncertainty and hardship, stories of resilience and ingenuity began to emerge—proof that determination can turn even the toughest challenges into opportunities.</p>
+    
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhsSWgJQWdW-H7TDStN1FaVaNIKZpgW7GMhynFxt4Qka6dUan-PWRcCOIyai-w7Hyv8BUHm4r4W9-y5b7Waa3S7-lwaepatOV6pffi6IiHM7T11hQ9LiRbZIA3I-xnYWMOxm2Riae_Gqe9H7eqSvNm05EwkaEnfnu2uEeTdDzqvDqTupqzitPbncdApqPB4/s720/1751148376367.jpg">
+    <p>Take the story of the Mwangi family from Kitale. Traditionally dependent on maize farming, the drought left their fields barren. Instead of giving up, they diversified into alternative crops that required less water, such as sorghum and beans. They also implemented innovative water conservation methods, collecting rainwater and adopting drip irrigation techniques. Within months, their small farm began producing enough to feed their family and sell the surplus at the local market.</p>
+    
+    <img src="https://picsum.photos/900/500?random=203" alt="Solar irrigation system">
+    <p>Local entrepreneurs, too, found ways to turn adversity into advantage. A group of young innovators in Eldoret launched a solar-powered irrigation system to support small-scale farmers. Their initiative not only helped communities survive the drought but also created employment and attracted investors from outside the region.</p>
+    
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKHDAdNpso0DuKcvBzSglf3vrN4szm2pPeKj6JsXouNZXa46yErmvUjSZeskmJmURaetSv7M0wQTo7t3Yp0FNQ09NUxW6FlRAF2Hz1hxUOtmP-IS6caiogg6W_SDahIBUPaQnGWnaW9JErh6fnHnstx4cn4VT5m3RZ23xrJzBgzII45x5giVGt_qp5Tx_I/s552/1750842117633.jpg">
+    <p>Experts say that resilience in such challenging times is not just about physical endurance but also mental and emotional strength. Communities that came together to share resources, knowledge, and encouragement were far better equipped to adapt and thrive.</p>
+    
+    <div class="key-takeaways">
+      <h4>Key Takeaways:</h4>
+      <ul>
+        <li>Diversify and adapt strategies in the face of adversity.</li>
+        <li>Innovate using available resources and modern techniques.</li>
+        <li>Strength lies in community support and shared knowledge.</li>
+        <li>Mental and emotional resilience is as important as physical action.</li>
+      </ul>
+      <p>The drought year proved that while we cannot always control external circumstances, our response can turn even the bleakest moments into stepping stones toward success.</p>
     </div>
   </div>
+</article>
+</div>
+
+<!-- Related Posts Section -->
+<section class="wrap">
+  <h2 style="color:var(--primary); margin-top:40px;">Related Posts</h2>
+  <div class="grid" id="relatedPosts"></div>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-col"><h4>About Us</h4><p>Unique Voice brings inspiring human stories, educational features, and business insights that empower change and innovation.</p></div>
+    <div class="footer-col"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Inspiration</a><a href="#">News</a></div>
+    <div class="footer-col"><h4>Follow Us</h4>
+      <div class="social-links"><a href="#" class="fb"><i class="fab fa-facebook-f"></i></a><a href="#" class="tw"><i class="fab fa-x-twitter"></i></a><a href="#" class="ig"><i class="fab fa-instagram"></i></a><a href="#" class="ln"><i class="fab fa-linkedin-in"></i></a></div>
+    </div>
+    <div class="footer-col newsletter" id="subscribe"><h4>Newsletter</h4><input type="email" id="newsletterEmail" placeholder="Enter your email"><button type="button" id="subscribeBtn">Subscribe</button></div>
+  </div>
   <div class="footer-bottom">&copy; <span id="footerYear"></span> Unique Voice. All rights reserved.</div>
-</footer><script>
-  document.getElementById('menuToggle').onclick = () => {
-    document.getElementById('mainNav').classList.toggle('show');
-  };
-  document.getElementById("footerYear").textContent = new Date().getFullYear();
-</script></body>
+</footer>
+
+<!-- Comment Modal -->
+<div class="modal" id="commentModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Comments</h3>
+      <button id="closeModal">&times;</button>
+    </div>
+    <div id="commentList"></div>
+    <form class="comment-form" id="commentForm">
+      <input type="text" id="commentName" placeholder="Your Name" required>
+      <textarea id="commentText" placeholder="Your Comment..." rows="3" required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById('menuToggle').onclick = () => document.getElementById('mainNav').classList.toggle('show');
+document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+// Comment modal logic
+const modal = document.getElementById('commentModal');
+const commentList = document.getElementById('commentList');
+let postId = "resilience-drought-2025";
+
+document.getElementById('openComments').onclick = e => {
+  e.stopPropagation();
+  loadComments();
+  modal.classList.add('show');
+};
+document.getElementById('closeModal').onclick = () => modal.classList.remove('show');
+window.onclick = e => { if(e.target === modal) modal.classList.remove('show'); };
+
+function loadComments(){
+  commentList.innerHTML = "";
+  const comments = JSON.parse(localStorage.getItem("comments-" + postId) || "[]");
+  if(comments.length === 0) commentList.innerHTML = "<p>No comments yet.</p>";
+  comments.forEach(c => {
+    const div = document.createElement('div');
+    div.className = 'comment';
+    div.innerHTML = `<strong>${c.name}</strong><p>${c.text}</p>`;
+    commentList.appendChild(div);
+  });
+  document.getElementById('openComments').innerHTML = `<i class="fa-solid fa-comment"></i> ${comments.length}`;
+}
+
+document.getElementById('commentForm').onsubmit = e => {
+  e.preventDefault();
+  const name = document.getElementById('commentName').value.trim();
+  const text = document.getElementById('commentText').value.trim();
+  if(!name || !text) return;
+  const comments = JSON.parse(localStorage.getItem("comments-" + postId) || "[]");
+  comments.push({name,text});
+  localStorage.setItem("comments-" + postId, JSON.stringify(comments));
+  loadComments();
+  e.target.reset();
+};
+
+// Related posts
+const relatedPosts = [
+  {id:"p4",title:"Youth art movement revitalizes community spirit",img:"https://picsum.photos/900/600?random=52",category:"Culture",author:"Culture Desk",date:"Oct 19, 2025",views:134,desc:"A youth-led art movement is changing lives across local towns."},
+  {id:"p5",title:"County clinics upgraded with modern facilities",img:"https://picsum.photos/900/600?random=53",category:"Health",author:"Health Reporter",date:"Oct 18, 2025",views:96,desc:"Healthcare transformed with new clinics and modern tech."},
+  {id:"p6",title:"Small businesses adapt during tough economic times",img:"https://picsum.photos/900/600?random=54",category:"Business",author:"Biz Reporter",date:"Oct 17, 2025",views:178,desc:"Entrepreneurs find new ways to sustain growth amid challenges."}
+];
+
+const relatedGrid = document.getElementById('relatedPosts');
+
+relatedPosts.forEach(p => {
+  const slug = p.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+  const card = document.createElement('article');
+  card.className = "story";
+  card.onclick = () => window.location.href=`/2025/026/${slug}.html`;
+  card.innerHTML = `
+    <div style="position:relative;">
+      <img src="${p.img}" alt="">
+      <div class="category-label">${p.category}</div>
+    </div>
+    <h3>${p.title}</h3>
+    <div class="meta">
+      <span><i class="fa-solid fa-user"></i>${p.author}</span>
+      <span><i class="fa-solid fa-calendar"></i>${p.date}</span>
+      <span><i class="fa-solid fa-eye"></i>${p.views}</span>
+    </div>
+    <p>${p.desc}</p>
+  `;
+  relatedGrid.appendChild(card);
+});
+</script>
+</body>
 </html>
