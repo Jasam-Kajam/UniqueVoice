@@ -144,19 +144,44 @@ document.getElementById("footerYear").textContent = new Date().getFullYear();
 const grid = document.getElementById('postGrid');
 const ticker = document.getElementById('ticker');
 const slidesContainer = document.getElementById('slides');
-let posts = [];
 
-// Fetch posts from posts.json
-fetch('posts.json')
-  .then(res => res.json())
-  .then(data => {
-    posts = data;
-    populatePosts();
-  })
-  .catch(err => console.error("Failed to load posts.json", err));
+// Sample posts data (replace or expand as needed)
+const posts = [
+  {
+    url: "post1.html",
+    title: "Breaking: New Innovation in Kenya",
+    desc: "Kenya sets new milestones in tech innovation, with local startups making global impact.",
+    img: "https://via.placeholder.com/600x400",
+    category: "Business",
+    author: "Admin",
+    date: "2025-10-28",
+    views: "123"
+  },
+  {
+    url: "post2.html",
+    title: "Cultural Festival Brings Communities Together",
+    desc: "Communities across Kenya celebrate heritage and culture in vibrant festivals.",
+    img: "https://via.placeholder.com/600x400",
+    category: "Culture",
+    author: "Admin",
+    date: "2025-10-27",
+    views: "98"
+  },
+  {
+    url: "post3.html",
+    title: "Inspiring Young Entrepreneurs",
+    desc: "Young Kenyans are making waves in entrepreneurship with innovative solutions.",
+    img: "https://via.placeholder.com/600x400",
+    category: "Inspiration",
+    author: "Admin",
+    date: "2025-10-26",
+    views: "210"
+  }
+];
 
+// Populate page
 function populatePosts() {
-  posts.forEach(p=>{
+  posts.forEach(p => {
     // Grid card
     const card = document.createElement('article');
     card.className = "story";
@@ -196,6 +221,9 @@ function populatePosts() {
   document.getElementById('next').onclick = () => { currentSlide=(currentSlide+1)%posts.length; updateCarousel(); };
   setInterval(()=>{ currentSlide=(currentSlide+1)%posts.length; updateCarousel(); },5000);
 }
+
+// Call function immediately
+populatePosts();
 </script>
 </body>
 </html>
